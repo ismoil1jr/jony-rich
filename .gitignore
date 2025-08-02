@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Django static files (collected)
+staticfiles/
+
+# VSCode va boshqa IDE fayllari
+.vscode/
+*.swp
+
+# Env fayllar
+.env
+*.env
+
+# MacOS va Linux sistemalari uchun
+.DS_Store

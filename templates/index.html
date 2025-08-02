@@ -17,12 +17,12 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <img src="images/logo.png" alt="JONY RICH" class="logo-img">
+                    <img src="{static 'images/logo.png' %}" alt="JONY RICH" class="logo-img">
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="mobile-logo-container">
                         <div class="mobile-logo">
-                            <img src="images/logo.png" alt="JONY RICH" class="mobile-logo-img">
+                            <img src="{static 'images/logo.png' %}" alt="JONY RICH" class="mobile-logo-img">
                         </div>
                     </li>
                     <li><a href="#home">Bosh sahifa</a></li>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="hero-banner">
-                <img src="images/main-banner.png" alt="JONY RICH Super Baraban Shou" class="main-banner">
+                <img src="{% static 'images/main-banner.png' %}" alt="JONY RICH Super Baraban Shou" class="main-banner">
             </div>
         </div>
     </section>
@@ -72,14 +72,14 @@
             <div class="hosts-grid">
                 <div class="host-card">
                     <div class="host-image">
-                        <img src="images/host1.png" alt="Ne'mat Axmedov">
+                        <img src="{% static 'images/host1.png' %}" alt="Ne'mat Axmedov">
                     </div>
                     <h3>Ne'mat Axmedov</h3>
                     <p>Bosh boshlovchi</p>
                 </div>
                 <div class="host-card">
                     <div class="host-image">
-                        <img src="images/host2.png" alt="Muhammadiso Abdulhairov">
+                        <img src="{% static 'images/host2.png' %}" alt="Muhammadiso Abdulhairov">
                     </div>
                     <h3>Muhammadiso Abdulhairov</h3>
                     <p>Bosh boshlovchi</p>
@@ -126,7 +126,7 @@
                     <div class="product-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="images/juice-package.png" alt="JONY RICH Milk Package">
+                                <img src="{% static '{% static 'juice-package.png' %}' %}" alt="JONY RICH Milk Package">
                             </div>
                             <h3>JONY RICH Sut Mahsuloti</h3>
                             <p>Promo-kod: qadoq ostida</p>
@@ -135,7 +135,7 @@
                     <div class="product-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="images/junior-rich.png" alt="Junior Rich Juice">
+                                <img src="{% static '{% static 'juice-package.png' %}' %}" alt="Junior Rich Juice">
                             </div>
                             <h3>Junior Rich Sharbat</h3>
                             <p>Promo-kod: qadoq ichida</p>
@@ -144,7 +144,7 @@
                     <div class="product-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="images/cleaner.png" alt="JONY RICH Cleaner">
+                                <img src="{% static 'images/cleaner.png' %}" alt="JONY RICH Cleaner">
                             </div>
                             <h3>JONY RICH Tozalovchi</h3>
                             <p>Promo-kod: yorliqda</p>
@@ -153,7 +153,7 @@
                     <div class="product-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="images/juice-package.png" alt="JONY RICH Energy">
+                                <img src="{% static 'juice-package.png' %}" alt="JONY RICH Energy">
                             </div>
                             <h3>JONY RICH Energetik</h3>
                             <p>Promo-kod: qadoq ostida</p>
@@ -162,7 +162,7 @@
                     <div class="product-slide">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="images/junior-rich.png" alt="JONY RICH Chips">
+                                <img src="{% static 'juice-package.png' %}" alt="JONY RICH Chips">
                             </div>
                             <h3>JONY RICH Chips</h3>
                             <p>Promo-kod: paket ichida</p>
@@ -193,7 +193,7 @@
                     <div class="prize-slide">
                         <div class="prize-card gold">
                             <div class="prize-image">
-                                <img src="images/prize-iphone.png" alt="iPhone 15 Pro Max">
+                                <img src="{% static 'images/prize-iphone.png' %}" alt="iPhone 15 Pro Max">
                             </div>
                             <h3>iPhone 15 Pro Max</h3>
                             <p>Eng yangi iPhone modeli</p>
@@ -202,7 +202,7 @@
                     <div class="prize-slide">
                         <div class="prize-card silver">
                             <div class="prize-image">
-                                <img src="images/prize-money.png" alt="Pul mukofoti">
+                                <img src="{% static 'images/prize-money.png' %}" alt="Pul mukofoti">
                             </div>
                             <h3>50 000 000 so'm</h3>
                             <p>Katta pul mukofoti</p>
@@ -211,7 +211,7 @@
                     <div class="prize-slide">
                         <div class="prize-card bronze">
                             <div class="prize-image">
-                                <img src="images/prize-car.png" alt="Avtomobil">
+                                <img src="{% static 'images/prize-car.png' %}" alt="Avtomobil">
                             </div>
                             <h3>Luxury Avtomobil</h3>
                             <p>Orzuingizdagi mashina</p>
@@ -220,7 +220,7 @@
                     <div class="prize-slide">
                         <div class="prize-card special">
                             <div class="prize-image">
-                                <img src="images/prize-gift.png" alt="Sovg'alar">
+                                <img src="{% static 'images/prize-gift.png' %}" alt="Sovg'alar">
                             </div>
                             <h3>Premium To'plam</h3>
                             <p>Eksklyuziv mahsulotlar</p>
@@ -325,7 +325,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/logo.png" alt="JONY RICH" class="footer-logo-img">
+                    <img src="{static 'images/logo.png' %}" alt="JONY RICH" class="footer-logo-img">
                 </div>
                 <div class="footer-text">
                     <h3>JONY RICH — Sotib ol. Yubor. Yutib ol!</h3>
