@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JONY RICH - Super Baraban Shou | 2600</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="operator-info">
+            <span>Beeline | Ucell | Mobiuz | Uzmobile | Humans — 2600 qisqa raqam orqali ishtirok eting!</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="JONY RICH" class="logo-img">
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="mobile-logo-container">
+                        <div class="mobile-logo">
+                            <img src="images/logo.png" alt="JONY RICH" class="mobile-logo-img">
+                        </div>
+                    </li>
+                    <li><a href="#home">Bosh sahifa</a></li>
+                    <li><a href="#products">Mahsulotlar</a></li>
+                    <li><a href="#prizes">Yutuqlar</a></li>
+                    <li><a href="#rules">Qoidalar</a></li>
+                    <li><a href="#contact">Aloqa</a></li>
+                    <li class="sms-number"><a href="sms:2600">2600</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="close-btn" id="close-btn">
+                    <span>&times;</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>SUPER BARABAN SHOU</h1>
+                <h2>XARID QILING VA ISHTIROK ETING</h2>
+                <p class="hero-description">
+                    Muhammadiso Abdulhairov va Ne'mat Axmedov bilan birga ajoyib yutuqlarga ega bo'ling! 
+                    JONY RICH mahsulotlarini xarid qiling, promo-kodni toping va 2600 raqamiga SMS yuboring.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn-primary" onclick="scrollToSection('how-to')">Qanday ishtirok etaman?</button>
+                    <button class="btn-secondary" onclick="scrollToSection('products')">Mahsulotlar</button>
+                </div>
+            </div>
+            <div class="hero-banner">
+                <img src="images/main-banner.png" alt="JONY RICH Super Baraban Shou" class="main-banner">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hosts Section -->
+    <section class="hosts">
+        <div class="container">
+            <h2>DASTUR BOSHLOVCHILARI</h2>
+            <div class="hosts-grid">
+                <div class="host-card">
+                    <div class="host-image">
+                        <img src="images/host1.png" alt="Ne'mat Axmedov">
+                    </div>
+                    <h3>Ne'mat Axmedov</h3>
+                    <p>Bosh boshlovchi</p>
+                </div>
+                <div class="host-card">
+                    <div class="host-image">
+                        <img src="images/host2.png" alt="Muhammadiso Abdulhairov">
+                    </div>
+                    <h3>Muhammadiso Abdulhairov</h3>
+                    <p>Bosh boshlovchi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Participate -->
+    <section id="how-to" class="how-to">
+        <div class="container">
+            <h2>QANDAY ISHTIROK ETAMAN?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>JONY RICH mahsulotlaridan birini sotib oling</h3>
+                    <p>Har qanday JONY RICH mahsulotini do'kondan xarid qiling</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Qadoqdagi 6 xonali promo-kodni toping</h3>
+                    <p>Mahsulot qadoqining ichida yoki ostida promo-kod joylashgan</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Promo-kodni 2600 raqamiga SMS qiling</h3>
+                    <p>Topilgan promo-kodni telefoningizdan 2600 ga yuboring</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Javob SMS orqali natijani oling</h3>
+                    <p>Bir necha daqiqada yutganingiz haqida xabar keladi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>PROMOKOD BOR MAHSULOTLAR</h2>
+            <div class="products-carousel-container">
+                <div class="products-carousel" id="products-carousel">
+                    <div class="product-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/juice-package.png" alt="JONY RICH Milk Package">
+                            </div>
+                            <h3>JONY RICH Sut Mahsuloti</h3>
+                            <p>Promo-kod: qadoq ostida</p>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/junior-rich.png" alt="Junior Rich Juice">
+                            </div>
+                            <h3>Junior Rich Sharbat</h3>
+                            <p>Promo-kod: qadoq ichida</p>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/cleaner.png" alt="JONY RICH Cleaner">
+                            </div>
+                            <h3>JONY RICH Tozalovchi</h3>
+                            <p>Promo-kod: yorliqda</p>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/juice-package.png" alt="JONY RICH Energy">
+                            </div>
+                            <h3>JONY RICH Energetik</h3>
+                            <p>Promo-kod: qadoq ostida</p>
+                        </div>
+                    </div>
+                    <div class="product-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/junior-rich.png" alt="JONY RICH Chips">
+                            </div>
+                            <h3>JONY RICH Chips</h3>
+                            <p>Promo-kod: paket ichida</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="changeProductSlide(-1)">‹</button>
+                    <button class="carousel-btn next" onclick="changeProductSlide(1)">›</button>
+                </div>
+                <div class="carousel-pagination" id="products-pagination">
+                    <span class="dot active" onclick="goToProductSlide(0)"></span>
+                    <span class="dot" onclick="goToProductSlide(1)"></span>
+                    <span class="dot" onclick="goToProductSlide(2)"></span>
+                    <span class="dot" onclick="goToProductSlide(3)"></span>
+                    <span class="dot" onclick="goToProductSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes -->
+    <section id="prizes" class="prizes">
+        <div class="container">
+            <h2>AJOYIB YUTUQLAR</h2>
+            <div class="prizes-carousel-container">
+                <div class="prizes-carousel" id="prizes-carousel">
+                    <div class="prize-slide">
+                        <div class="prize-card gold">
+                            <div class="prize-image">
+                                <img src="images/prize-iphone.png" alt="iPhone 15 Pro Max">
+                            </div>
+                            <h3>iPhone 15 Pro Max</h3>
+                            <p>Eng yangi iPhone modeli</p>
+                        </div>
+                    </div>
+                    <div class="prize-slide">
+                        <div class="prize-card silver">
+                            <div class="prize-image">
+                                <img src="images/prize-money.png" alt="Pul mukofoti">
+                            </div>
+                            <h3>50 000 000 so'm</h3>
+                            <p>Katta pul mukofoti</p>
+                        </div>
+                    </div>
+                    <div class="prize-slide">
+                        <div class="prize-card bronze">
+                            <div class="prize-image">
+                                <img src="images/prize-car.png" alt="Avtomobil">
+                            </div>
+                            <h3>Luxury Avtomobil</h3>
+                            <p>Orzuingizdagi mashina</p>
+                        </div>
+                    </div>
+                    <div class="prize-slide">
+                        <div class="prize-card special">
+                            <div class="prize-image">
+                                <img src="images/prize-gift.png" alt="Sovg'alar">
+                            </div>
+                            <h3>Premium To'plam</h3>
+                            <p>Eksklyuziv mahsulotlar</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" onclick="changePrizeSlide(-1)">‹</button>
+                    <button class="carousel-btn next" onclick="changePrizeSlide(1)">›</button>
+                </div>
+                <div class="carousel-pagination" id="prizes-pagination">
+                    <span class="dot active" onclick="goToPrizeSlide(0)"></span>
+                    <span class="dot" onclick="goToPrizeSlide(1)"></span>
+                    <span class="dot" onclick="goToPrizeSlide(2)"></span>
+                    <span class="dot" onclick="goToPrizeSlide(3)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules -->
+    <section id="rules" class="rules">
+        <div class="container">
+            <h2>QOIDALAR</h2>
+            <div class="rules-list">
+                <div class="rule-item">
+                    <span class="rule-number">01</span>
+                    <p>Har bir promo-kod faqat 1 marta ishlatiladi</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">02</span>
+                    <p>18 yoshdan katta ishtirokchilar uchun</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">03</span>
+                    <p>G'oliblar haftalik jonli efirda e'lon qilinadi</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">04</span>
+                    <p>Promo-kodni yuborish rozilik bildirish hisoblanadi</p>
+                </div>
+                <div class="rule-item">
+                    <span class="rule-number">05</span>
+                    <p>Chekni saqlab qolish tavsiya etiladi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>ALOQA</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Telefon</h4>
+                        <a href="tel:+998901234567">+998 90 123 45 67</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <a href="mailto:info@jonyrich.uz">info@jonyrich.uz</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Manzil</h4>
+                        <p>Toshkent, Yunusobod, Jony Tower, 3-qavat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    Instagram
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                    Telegram
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-facebook"></i>
+                    Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="JONY RICH" class="footer-logo-img">
+                </div>
+                <div class="footer-text">
+                    <h3>JONY RICH — Sotib ol. Yubor. Yutib ol!</h3>
+                    <p>&copy; 2024 JONY RICH. Barcha huquqlar himoyalangan.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
