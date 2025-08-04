@@ -688,9 +688,14 @@ body {
     text-align: center;
   }
 
+
   .hero-banner {
-    order: 1;
+    margin-top: 20px;
   }
+  .main-banner {
+    max-width: 350px; /* Agar kerak bo‘lsa, o‘lchamni qayta ko‘rib chiqing */
+  }
+
 
   .hero-text {
     order: 2;
