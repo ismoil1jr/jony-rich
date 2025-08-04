@@ -16,7 +16,7 @@ staticfiles/
 
 # MacOS va Linux sistemalari uchun
 .DS_Store
-
+staticfiles
 
 # Python cache
 __pycache__/
