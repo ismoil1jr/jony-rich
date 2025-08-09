@@ -108,15 +108,55 @@
             <h2>PROMOKOD BOR MAHSULOTLAR</h2>
             <div class="products-grid">
                 <!-- Product 1 -->
-                 {% for i in product %}
                 <div class="product-item">
                     <div class="product-image-container">
-                        <img src="{{ i.imageURL }}" alt="JONY RICH OYNA TOZALAGICH" class="product-image">
+                        <img src="{% static 'images/01.png' %}" alt="JONY RICH" class="product-image">
                     </div>
-                    <h3 class="product-title">{{ i.name }}</h3>
+                    <h3 class="product-title">Jony Rich | nok sharbati</h3>
                 </div>
-                {% endfor %}
-                
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/02.png' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | Anor sharbati</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/05.png' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | Olcha sharbati</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/06.png' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | Apelsin sharbati</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/Juice.png' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | Olma sharbati</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/анти_жер-02.jpg' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | Oyna Tozolovchi</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/анти_жер-10.jpg' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | balon qoraytruvchi</h3>
+                </div>
+                <div class="product-item">
+                    <div class="product-image-container">
+                        <img src="{% static 'images/анти_жер-12.jpg' %}" alt="JONY RICH" class="product-image">
+                    </div>
+                    <h3 class="product-title">Jony Rich | анти жер</h3>
+                </div>
+
             </div>
         </div>
     </section>
