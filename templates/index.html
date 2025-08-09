@@ -108,32 +108,15 @@
             <h2>PROMOKOD BOR MAHSULOTLAR</h2>
             <div class="products-grid">
                 <!-- Product 1 -->
+                 {% for i in product %}
                 <div class="product-item">
                     <div class="product-image-container">
-                        <img src="{% static 'images/Juice.png' %}" alt="JONY RICH OYNA TOZALAGICH" class="product-image">
+                        <img src="{{ i.imageURL }}" alt="JONY RICH OYNA TOZALAGICH" class="product-image">
                     </div>
-                    <h3 class="product-title">JONY RICH | OLMA SHARBATI</h3>
+                    <h3 class="product-title">{{ i.name }}</h3>
                 </div>
+                {% endfor %}
                 
-                <!-- Product 2 -->
-                <div class="product-item">
-                    <div class="product-image-container">
-                        <img src="{% static 'images/04.png' %}" alt="JONY RICH APELSIN SHARBAT" class="product-image">
-                    </div>
-                    <h3 class="product-title">JONY RICH | QULUPNAY-PULUPNAY</h3>
-                </div>
-                <div class="product-item">
-                    <div class="product-image-container">
-                        <img src="{% static 'images/avto.jpg' %}" alt="JONY RICH Avto" class="product-image">
-                    </div>
-                    <h3 class="product-title">JONY RICH | BALON QORAYTRUVCHI</h3>
-                </div>
-                <div class="product-item">
-                    <div class="product-image-container">
-                        <img src="{% static 'images/yog.jpg' %}" alt="JONY RICH APELSIN SHARBAT" class="product-image">
-                    </div>
-                    <h3 class="product-title">JONY RICH | YOG'GA QARSHI</h3>
-                </div>
             </div>
         </div>
     </section>
