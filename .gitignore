@@ -23,3 +23,23 @@ __pycache__/
 *.py[cod]
 
 media/
+
+db.sqlite3/
+
+
+# SQLite database
+db.sqlite3
+
+# Media uploads
+/media/
+
+# __pycache__ va boshqa Python cache’lari
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+.env/
