@@ -99,3 +99,59 @@ document.querySelectorAll("img").forEach((img) => {
     console.log("Image failed to load:", this.src)
   })
 })
+
+
+
+function showAd(targetSection) {
+  const overlay = document.getElementById("ad-overlay");
+  const skipBtn = document.getElementById("skip-btn");
+  const adVideo = document.getElementById("ad-video");
+
+  adVideo.muted = false;
+  adVideo.volume = 1.0;
+
+  overlay.style.display = "flex";
+  adVideo.currentTime = 0;
+
+  let playPromise = adVideo.play();
+  if (playPromise !== undefined) {
+      playPromise.catch(() => {
+          adVideo.muted = true;
+          adVideo.play();
+      });
+  }
+
+  skipBtn.style.display = "none";
+
+  // 2 sekunddan keyin skip tugmasi chiqadi
+  setTimeout(() => {
+    skipBtn.style.display = "block";
+  }, 2000);
+
+  skipBtn.onclick = () => {
+      overlay.style.display = "none";
+      adVideo.pause();
+      document.getElementById(targetSection).scrollIntoView({ behavior: 'smooth' });
+  };
+
+  adVideo.onended = () => {
+      overlay.style.display = "none";
+      document.getElementById(targetSection).scrollIntoView({ behavior: 'smooth' });
+  };
+}
+
+// Mahsulotlar
+document.querySelectorAll('a[href="#products"], button[onclick*="products"]').forEach(el => {
+  el.addEventListener("click", (e) => {
+      e.preventDefault();
+      showAd("products");
+  });
+});
+
+// Shartlar
+document.querySelectorAll('a[href="#rules"], button[onclick*="rules"]').forEach(el => {
+  el.addEventListener("click", (e) => {
+      e.preventDefault();
+      showAd("rules");
+  });
+});
