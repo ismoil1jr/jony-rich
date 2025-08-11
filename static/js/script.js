@@ -155,3 +155,43 @@ document.querySelectorAll('a[href="#rules"], button[onclick*="rules"]').forEach(
       showAd("rules");
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const itemsPerPage = 4;
+  const productItems = Array.from(document.querySelectorAll(".products-grid .product-item"));
+  let currentPage = 1;
+  const totalPages = Math.ceil(productItems.length / itemsPerPage);
+
+  const prevBtn = document.getElementById("prevPage");
+  const nextBtn = document.getElementById("nextPage");
+  const pageInfo = document.getElementById("pageInfo");
+
+  function showPage(page) {
+      productItems.forEach((item, index) => {
+          item.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? "block" : "none";
+      });
+      pageInfo.textContent = `Sahifa ${page} / ${totalPages}`;
+      prevBtn.disabled = (page === 1);
+      nextBtn.disabled = (page === totalPages);
+  }
+
+  prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+          currentPage--;
+          showPage(currentPage);
+      }
+  });
+
+  nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) {
+          currentPage++;
+          showPage(currentPage);
+      }
+  });
+
+  // Initial display
+  showPage(currentPage);
+});
+
+

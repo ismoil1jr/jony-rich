@@ -1170,3 +1170,27 @@ html {
       max-height: 90%;
   }
 }
+
+
+
+.pagination {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: #FFD700;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
