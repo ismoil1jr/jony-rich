@@ -1194,3 +1194,94 @@ html {
   background-color: #ccc;
   cursor: not-allowed;
 }
+
+
+
+
+/* Hosts Section */
+.hosts {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.hosts h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hosts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.host-item {
+  text-align: center;
+  width: 100%;
+}
+
+.host-image-container {
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid #d4af37;
+  transition: all 0.3s ease;
+  width: 250px;
+  height: 250px;
+}
+
+.host-image-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
+}
+
+.host-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.host-title {
+  color: #d4af37;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.host-description {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .hosts {
+      padding: 40px 0;
+  }
+  
+  .hosts h2 {
+      font-size: 2rem;
+  }
+  
+  .hosts-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .host-image-container {
+      width: 200px;
+      height: 200px;
+  }
+}
