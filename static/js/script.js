@@ -100,62 +100,96 @@ document.querySelectorAll("img").forEach((img) => {
   })
 })
 
+// Pagination for products
+document.addEventListener("DOMContentLoaded", () => {
+  const products = document.querySelectorAll(".product-item")
+  const prevPageBtn = document.getElementById("prev-page")
+  const nextPageBtn = document.getElementById("next-page")
+  const pageInfo = document.getElementById("page-info")
+  const itemsPerPage = 4
+  let currentPage = 1
+  const totalPages = Math.ceil(products.length / itemsPerPage)
 
+  function updatePagination() {
+    products.forEach((product, index) => {
+      product.classList.remove("active")
+      if (index >= (currentPage - 1) * itemsPerPage && index < currentPage * itemsPerPage) {
+        product.classList.add("active")
+      }
+    })
 
-function showAd(targetSection) {
-  const overlay = document.getElementById("ad-overlay");
-  const skipBtn = document.getElementById("skip-btn");
-  const adVideo = document.getElementById("ad-video");
-
-  adVideo.muted = false;
-  adVideo.volume = 1.0;
-
-  overlay.style.display = "flex";
-  adVideo.currentTime = 0;
-
-  let playPromise = adVideo.play();
-  if (playPromise !== undefined) {
-      playPromise.catch(() => {
-          adVideo.muted = true;
-          adVideo.play();
-      });
+    pageInfo.textContent = `${currentPage} / ${totalPages}`
+    prevPageBtn.disabled = currentPage === 1
+    nextPageBtn.disabled = currentPage === totalPages
   }
 
-  skipBtn.style.display = "none";
+  prevPageBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--
+      updatePagination()
+    }
+  })
 
-  // 2 sekunddan keyin skip tugmasi chiqadi
+  nextPageBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      currentPage++
+      updatePagination()
+    }
+  })
+
+  // Initialize pagination
+  updatePagination()
+})
+
+function showAd(targetSection) {
+  const overlay = document.getElementById("ad-overlay")
+  const skipBtn = document.getElementById("skip-btn")
+  const adVideo = document.getElementById("ad-video")
+
+  adVideo.muted = false
+  adVideo.volume = 1.0
+
+  overlay.style.display = "flex"
+  adVideo.currentTime = 0
+
+  let playPromise = adVideo.play()
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      adVideo.muted = true
+      adVideo.play()
+    })
+  }
+
+  skipBtn.style.display = "none"
+
   setTimeout(() => {
-    skipBtn.style.display = "block";
-  }, 2000);
+    skipBtn.style.display = "block"
+  }, 2000)
 
   skipBtn.onclick = () => {
-      overlay.style.display = "none";
-      adVideo.pause();
-      document.getElementById(targetSection).scrollIntoView({ behavior: 'smooth' });
-  };
+    overlay.style.display = "none"
+    adVideo.pause()
+    document.getElementById(targetSection).scrollIntoView({ behavior: "smooth" })
+  }
 
   adVideo.onended = () => {
-      overlay.style.display = "none";
-      document.getElementById(targetSection).scrollIntoView({ behavior: 'smooth' });
-  };
+    overlay.style.display = "none"
+    document.getElementById(targetSection).scrollIntoView({ behavior: "smooth" })
+  }
 }
 
 // Mahsulotlar
 document.querySelectorAll('a[href="#products"], button[onclick*="products"]').forEach(el => {
   el.addEventListener("click", (e) => {
-      e.preventDefault();
-      showAd("products");
-  });
-});
+    e.preventDefault()
+    showAd("products")
+  })
+})
 
 // Shartlar
 document.querySelectorAll('a[href="#rules"], button[onclick*="rules"]').forEach(el => {
   el.addEventListener("click", (e) => {
-      e.preventDefault();
-      showAd("rules");
-  });
-});
-
-
-
-
+    e.preventDefault()
+    showAd("rules")
+  })
+})

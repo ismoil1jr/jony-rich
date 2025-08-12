@@ -61,7 +61,7 @@ body {
 
 .logo-img {
   height: 60px;
-  width: auto; /* Allow natural width to maintain aspect ratio */
+  width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
@@ -141,13 +141,13 @@ body {
 }
 
 .mobile-logo {
-  margin-bottom: 1rem; /* reduced margin-bottom for better mobile positioning */
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 .mobile-logo-img {
   width: 80px;
-  height: auto; /* Allow natural height to maintain aspect ratio */
+  height: auto;
   filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.4));
 }
 
@@ -211,7 +211,7 @@ body {
 .hero-banner {
   text-align: center;
   order: 2;
-  margin-top: 10px; /* Move the banner down by 1cm (10px) */
+  margin-top: 10px;
 }
 
 .main-banner {
@@ -359,8 +359,6 @@ body {
 }
 
 /* Products Section */
-
-/* Products Section */
 .products {
   padding: 80px 0;
   background: #ffffff;
@@ -388,6 +386,11 @@ body {
 .product-item {
   text-align: center;
   width: 100%;
+  display: none; /* Initially hide all products */
+}
+
+.product-item.active {
+  display: block; /* Show active products */
 }
 
 .product-image-container {
@@ -419,6 +422,45 @@ body {
   font-weight: 700;
   margin-top: 1rem;
   text-transform: uppercase;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.pagination button {
+  background: linear-gradient(135deg, #d4af37, #ffd700);
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.pagination button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.pagination button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.pagination span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
 }
 
 /* Desktop specific styles */
@@ -463,6 +505,15 @@ body {
   .product-title {
     font-size: 1.1rem;
   }
+
+  .pagination button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .pagination span {
+    font-size: 0.9rem;
+  }
 }
 
 /* Very small screens */
@@ -478,6 +529,15 @@ body {
   .product-image-container {
     width: 200px;
     height: 260px;
+  }
+
+  .pagination button {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .pagination span {
+    font-size: 0.8rem;
   }
 }
 
@@ -505,7 +565,6 @@ body {
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    /* reduced top padding from 4rem to 2rem to lower logo position */
     padding: 2rem 0 2rem;
     gap: 1.5rem;
     backdrop-filter: blur(10px);
@@ -533,7 +592,7 @@ body {
 
   .hero-banner {
     order: 1;
-    margin-top: 10px; /* Move the banner down by 1cm (10px) */
+    margin-top: 10px;
   }
 
   .hero-text {
@@ -560,28 +619,28 @@ body {
   }
 
   .products {
-    padding: 40px 0; /* Reduced padding for mobile */
+    padding: 40px 0;
   }
 
   .products h2 {
-    font-size: 2rem; /* Adjusted font size for mobile */
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets and larger mobiles */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
   .product-card {
     padding: 1rem;
-    height: 240px; /* Adjusted to match image height + padding */
-    width: 180px; /* Specified mobile width */
+    height: 240px;
+    width: 180px;
   }
 
   .product-image {
-    height: 240px; /* Specified image height for mobile */
-    margin-bottom: 0.5rem; /* Reduced margin for better fit */
+    height: 240px;
+    margin-bottom: 0.5rem;
   }
 
   .product-image img {
@@ -592,9 +651,9 @@ body {
   }
 
   .product-card h3 {
-    font-size: 0.9rem; /* Adjusted font size for mobile to fit */
-    white-space: normal; /* Allow full name to wrap */
-    overflow: visible; /* Ensure full text is visible */
+    font-size: 0.9rem;
+    white-space: normal;
+    overflow: visible;
     text-overflow: clip;
   }
 
@@ -666,17 +725,17 @@ body {
   }
 
   .products-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
+    grid-template-columns: 1fr;
   }
 
   .product-card {
-    height: 260px; /* Specified mobile height */
-    width: 200px; /* Specified mobile width */
+    height: 260px;
+    width: 200px;
   }
 
   .product-image {
-    height: 240px; /* Specified image height for very small screens */
-    margin-bottom: 0.5rem; /* Reduced margin for better fit */
+    height: 240px;
+    margin-bottom: 0.5rem;
   }
 
   .product-image img {
@@ -687,9 +746,9 @@ body {
   }
 
   .product-card h3 {
-    font-size: 0.9rem; /* Adjusted font size for very small screens */
-    white-space: normal; /* Allow full name to wrap */
-    overflow: visible; /* Ensure full text is visible */
+    font-size: 0.9rem;
+    white-space: normal;
+    overflow: visible;
     text-overflow: clip;
   }
 }
@@ -882,7 +941,7 @@ body {
 
 .footer-logo-img {
   height: 50px;
-  width: auto; /* Allow natural width to maintain aspect ratio */
+  width: auto;
 }
 
 .footer-text {
@@ -925,7 +984,6 @@ body {
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    /* reduced top padding from 4rem to 2rem for consistent mobile positioning */
     padding: 2rem 0 2rem;
     gap: 1.5rem;
     backdrop-filter: blur(10px);
@@ -953,7 +1011,7 @@ body {
 
   .hero-banner {
     order: 1;
-    margin-top: 10px; /* Move the banner down by 1cm (10px) */
+    margin-top: 10px;
   }
 
   .hero-text {
@@ -980,33 +1038,33 @@ body {
   }
 
   .products {
-    padding: 40px 0; /* Reduced padding for mobile */
+    padding: 40px 0;
   }
 
   .products h2 {
-    font-size: 2rem; /* Adjusted font size for mobile */
+    font-size: 2rem;
     margin-bottom: 2rem;
   }
 
   .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns on tablets and larger mobiles */
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
 
   .product-card {
     padding: 1rem;
-    height: 240px; /* Larger mobile height */
-    width: 180px; /* Larger mobile width */
+    height: 240px;
+    width: 180px;
   }
 
   .product-image {
-    height: 240px; /* Larger image height for mobile */
+    height: 240px;
   }
 
   .product-card h3 {
-    font-size: 1.1rem; /* Larger font size for mobile */
-    white-space: normal; /* Allow full name to wrap */
-    overflow: visible; /* Ensure full text is visible */
+    font-size: 1.1rem;
+    white-space: normal;
+    overflow: visible;
     text-overflow: clip;
   }
 
@@ -1078,22 +1136,22 @@ body {
   }
 
   .products-grid {
-    grid-template-columns: 1fr; /* Single column on very small screens */
+    grid-template-columns: 1fr;
   }
 
   .product-card {
-    height: 260px; /* Larger height for very small screens */
-    width: 200px; /* Larger width for very small screens */
+    height: 260px;
+    width: 200px;
   }
 
   .product-image {
-    height: 240px; /* Larger image height for very small screens */
+    height: 240px;
   }
 
   .product-card h3 {
-    font-size: 1rem; /* Larger font size for very small screens */
-    white-space: normal; /* Allow full name to wrap */
-    overflow: visible; /* Ensure full text is visible */
+    font-size: 1rem;
+    white-space: normal;
+    overflow: visible;
     text-overflow: clip;
   }
 }
@@ -1134,11 +1192,11 @@ html {
   height: auto;
   max-height: 100vh;
   object-fit: contain;
-  pointer-events: none; /* video elementini bosib hech narsa qilib bo‘lmaydi */
+  pointer-events: none;
 }
 
 #skip-btn {
-  background-color: #ffd700; /* sariq */
+  background-color: #ffd700;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -1156,7 +1214,7 @@ html {
     font-size: 0.9rem;
     padding: 8px 16px;
     top: 10px;
-    left: 10px; /* mobile uchun chap tomonga o‘tkazdik */
+    left: 10px;
     right: auto;
   }
 
@@ -1164,28 +1222,6 @@ html {
     width: 100%;
     max-height: 90%;
   }
-}
-
-.pagination {
-  display: flex;
-  align-items: center;
-  margin-top: 20px;
-  gap: 10px;
-}
-
-.pagination button {
-  background-color: #ffd700;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.pagination button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
 }
 
 /* Hosts Section */
