@@ -1,30 +1,29 @@
-# 1. Python bazaviy image
-FROM python:3.11-slim
+# Rasmiy Python image
+FROM python:3.12-slim
 
-# 2. Django uchun ishchi katalog
+# Ishchi katalog
 WORKDIR /app
 
-# 3. Python outputni buffer qilmasligi uchun
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# 4. Linux paketlarni yangilash va kerakli kutubxonalarni o‘rnatish
+# Tizimga kerakli paketlar
 RUN apt-get update && apt-get install -y \
-    gcc \
+    build-essential \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# 5. requirements.txt ni o‘rnatish
-COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Python pip yangilash
+RUN pip install --upgrade pip
 
-# 6. Loyihani nusxalash
-COPY . /app/
+# Requirements faylni nusxalash
+COPY requirements.txt .
 
-EXPOSE 8000
+# Kutubxonalarni o‘rnatish
+RUN pip install -r requirements.txt
 
-# 7. Collect static (production uchun)
+# Butun loyihani nusxalash
+COPY . .
+
+# Collect static files (agar Django bo‘lsa)
 RUN python manage.py collectstatic --noinput
 
-# 8. Gunicorn orqali serverni ishga tushirish
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Gunicorn orqali ishga tushirish
+CMD ["gunicorn", "jony_rich.wsgi:application", "--bind", "0.0.0.0:8000"]
